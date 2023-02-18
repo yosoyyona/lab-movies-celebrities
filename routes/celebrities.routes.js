@@ -22,7 +22,7 @@ router.post("/celebrities/create", (req, res) => {
         return;
         }
     })
-    .catch((err) => console.log(`Error while creating a new celebrity: ${err}`));
+    .catch((err) => console.log(`Error while adding a new celebrity: ${err}`));
 
 })
 
