@@ -10,7 +10,7 @@ router.post("/celebrities/create", (req, res) => {
     const { name, occupation, catchPhrase } = req.body
 
     Celebrity.findOne({ name })
-    .then((dbCelebrities) => {
+    .then(dbCelebrities => {
 
         if (!dbCelebrities)
         {
