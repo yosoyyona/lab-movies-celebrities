@@ -36,9 +36,23 @@ router.post("/movies/create", (req, res) => {
 })
 
 router.get("/movies", (req, res) => {
+
     Movie.find()
     .then((dbMovies) => res.render("movies/movies", { movies: dbMovies}))
     .catch((err) => console.log(`Error while getting movies from the DB: ${err}`));
+})
+
+router.get("/movies/:id", (req, res) => {
+    
+    const { id } = req.params
+
+    Movie.findById(id)
+    .populate('cast')
+    .then( movie => {
+        res.render("movies/movie-details", movie ) 
+    })
+    .catch((err) => console.log(`Error while retrieving movie details: ${err}`))
+
 })
 
 
