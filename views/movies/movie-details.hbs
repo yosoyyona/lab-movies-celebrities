@@ -5,6 +5,8 @@
 <h4> Genre: {{genre}} </h4>
 <h4> Plot: {{plot}} </h4>
 
+
+{{!-- Iteration 8. cast - WIP --}}
 <h4> Cast </h4>
 
 <ol> 
@@ -18,3 +20,15 @@
 
     {{/each}}
 </ol>
+
+<form action="/movies/{{_id}}/edit" method="POST"> 
+
+    <button type="submit"> Edit the movie </button>
+
+</form>
+
+<form action="/movies/{{_id}}/delete" method="POST"> 
+
+    <button type="submit"> Delete the movie </button>
+
+</form>
